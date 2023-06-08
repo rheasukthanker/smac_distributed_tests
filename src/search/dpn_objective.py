@@ -126,10 +126,10 @@ def fairness_objective_dpn(config, seed, budget):
             prec1, prec5 = accuracy(outputs.data, labels, topk=(1, 5))
             meters["loss"].update(loss.data.item(), inputs.size(0))
             meters["top5"].update(prec5.data.item(), inputs.size(0))
-            print("Epoch: {} Loss: {} Top5: {}".format(epoch, meters["loss"].avg, meters["top5"].avg))
+            print("Epoch: {} Loss: {}".format(epoch, meters["loss"].avg))
         epoch=epoch+1
             #break
     return {
-        "negacc": -meters["top5"].avg, 
+        "time": time.time() - start,
         "loss": meters["loss"].avg,
         }

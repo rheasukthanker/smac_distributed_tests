@@ -1,0 +1,34 @@
+{
+  "stats": {
+    "submitted": 1,
+    "finished": 0,
+    "running": 1
+  },
+  "data": [
+    [
+      1,
+      null,
+      209652396,
+      2.5,
+      2147483647.0,
+      0.0,
+      0,
+      0.0,
+      0.0,
+      {}
+    ]
+  ],
+  "configs": {
+    "1": {
+      "edge1": "4",
+      "edge2": "0",
+      "edge3": "4",
+      "head": "CosFace",
+      "optimizer": "Adam",
+      "lr_adam": 8.993930726120077e-05
+    }
+  },
+  "config_origins": {
+    "1": "Initial Design: Random"
+  }
+}

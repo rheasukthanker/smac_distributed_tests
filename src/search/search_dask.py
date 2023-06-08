@@ -53,12 +53,13 @@ if __name__ == "__main__":
         n_trials=200,  # Evaluate max 200 different trials
         min_budget=2,  
         max_budget=10,  
-        n_workers=1,
+        n_workers=8,
     )
 
     initial_design = MultiFidelityFacade.get_initial_design(scenario, n_configs=16)
     intensifier = MultiFidelityFacade.get_intensifier(scenario, eta=2)
     multi_objective_algorithm = ParEGO(scenario)
+    client = dask.distributed.Client(scheduler_file="scheduler-dpn-file.json")
 
     smac = MultiFidelityFacade(
         scenario,
@@ -67,6 +68,7 @@ if __name__ == "__main__":
         multi_objective_algorithm=multi_objective_algorithm,
         overwrite=True,
         intensifier = intensifier,
+        dask_client=client
     )
     #        target_fn=target_fn,
     # Let's optimize
