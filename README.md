@@ -1,1 +1,1 @@
-# smac_distributed_tests
+## Repository to reproduce issues with dask+smac
