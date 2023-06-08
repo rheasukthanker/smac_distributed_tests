@@ -7,4 +7,4 @@
 #SBATCH -e logs/%j.%x.%N.err # STDERR  (the folder log has to be created prior to running or this won't work)
 #SBATCH -J fairnas # sets the job name. If not specified, the file name will be used as job name
 #SBATCH --mail-type=END,FAIL # (recive mails about end and timeouts/crashes of your job)
-python src/search/search_dask.py
+python src/search/search_single_worker.py
